@@ -20,7 +20,15 @@ namespace TestApp
         {
             var services = new ServiceCollection();
             services.AddTransient<MainWindowViewModel>();
+            services.AddTransient<MainWindow>();
             return services.BuildServiceProvider();
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            var window = this.Services.GetService<MainWindow>();
+            window.Show();
+            base.OnStartup(e);
         }
     }
 }
