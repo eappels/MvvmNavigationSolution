@@ -26,7 +26,7 @@ namespace TestApp
 
         protected override void OnStartup(StartupEventArgs e)
         {
-            var window = this.Services.GetService<MainWindow>();
+            var window = Services.GetService<MainWindow>();
             window.Show();
             base.OnStartup(e);
         }
